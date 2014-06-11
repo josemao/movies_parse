@@ -21,3 +21,23 @@ Parse.Cloud.define("averageStars", function(request, response) {
     }
   });
 });
+
+
+Parse.Cloud.beforeSave("Review", function(request, response) {
+  if (request.object.get("stars") < 1) {
+    response.error("you cannot give less than one star");
+  } else if (request.object.get("stars") > 5) {
+    response.error("you cannot give more than five stars");
+  } else {
+    response.success();
+  }
+});
+
+/*Parse.Cloud.beforeSave(Parse.User, function(request, response) {
+  if (!request.object.get("email")) {
+    response.error("email is required for signup");
+  } else {
+    response.success();
+  }
+});*/
+
