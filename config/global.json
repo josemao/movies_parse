@@ -7,5 +7,8 @@
             "applicationId": "8FKZ27U00eOBZM4TLdilCg6yYfR8InLltcnjidEj", 
             "masterKey": "LSP1JCJgS2fRDMnQ8reIuGbcKfe1flKkPZONjmit"
         }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
     }
 }
