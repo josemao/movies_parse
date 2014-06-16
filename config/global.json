@@ -1,13 +1,13 @@
 {
     "applications": {
         "_default": {
-            "link": "josemao"
+            "link": "development"
         }, 
-        "josemao": {
+        "development": {
             "applicationId": "8FKZ27U00eOBZM4TLdilCg6yYfR8InLltcnjidEj", 
             "masterKey": "LSP1JCJgS2fRDMnQ8reIuGbcKfe1flKkPZONjmit"
         }, 
-        "josemao_prod": {
+        "production": {
             "applicationId": "O7C4ON3KNf1x2ELWKsxH0dAsjLdR7tdefwQPcL0g", 
             "masterKey": "fm97QyAPygeLJyG98zZM5MnQ0WuqmBq3pX8rx97W"
         }
