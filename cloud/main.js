@@ -49,15 +49,14 @@ Parse.Cloud.beforeSave("Review", function(request, response) {
 });*/
 
 //OBJETCS: 
-Parse.Cloud.httpRequest({
-  url: 'http://www.parse.com/',
-  success: function(httpResponse) {
-    console.log(httpResponse.text);
-  },
-  error: function(httpResponse) {
-    console.error('Request failed with response code ' + httpResponse.status);
-  }
-});
+
+
+// PRUEBAS: 
+// De cargar módulos: 
+var name = require('cloud/name.js');
+name.isACoolName('Fred'); // returns false
+name.isACoolName('Skippy'); // returns true;
+name.coolNames; // undefined.
 
 // BACKGROUNDS:  
 Parse.Cloud.job("userMigration", function(request, status) {
