@@ -1,6 +1,7 @@
 
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 // For example:
+//CLOUD FUNCTIONS: 
 Parse.Cloud.define("hello", function(request, response) {
   response.success("Hello world!");
 });
@@ -22,7 +23,13 @@ Parse.Cloud.define("averageStars", function(request, response) {
   });
 });
 
+Parse.Cloud.define("Logger", function(request, response) {
+  console.log(request.params);
+  response.success();
+});
 
+
+// HANDLERS:  
 Parse.Cloud.beforeSave("Review", function(request, response) {
   if (request.object.get("stars") < 1) {
     response.error("you cannot give less than one star");
@@ -41,6 +48,18 @@ Parse.Cloud.beforeSave("Review", function(request, response) {
   }
 });*/
 
+//OBJETCS: 
+Parse.Cloud.httpRequest({
+  url: 'http://www.parse.com/',
+  success: function(httpResponse) {
+    console.log(httpResponse.text);
+  },
+  error: function(httpResponse) {
+    console.error('Request failed with response code ' + httpResponse.status);
+  }
+});
+
+// BACKGROUNDS:  
 Parse.Cloud.job("userMigration", function(request, status) {
   // Set up to modify user data
   Parse.Cloud.useMasterKey();
