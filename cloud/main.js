@@ -28,6 +28,27 @@ Parse.Cloud.define("Logger", function(request, response) {
   response.success();
 });
 
+/*Parse.Cloud.define("saving", function(request, response) {
+  var GameScore = Parse.Object.extend("GameScore");
+  var gameScore = new GameScore();
+
+  gameScore.save({
+    score: 10,
+    playerName: "Sean",
+    cheatMode: false
+  }, {
+    success: function(gameScore) {
+      // The object was saved successfully.
+      response.success('New object created with objectId: ' + gameScore.id);
+    },
+    error: function(gameScore, error) {
+      // The save failed.
+      // error is a Parse.Error with an error code and description.
+      response.error('Failed to create new object, with error code: ' + error.description);
+    }
+  });
+}); */
+
 
 // HANDLERS:  
 Parse.Cloud.beforeSave("Review", function(request, response) {
